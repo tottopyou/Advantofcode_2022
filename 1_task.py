@@ -2270,7 +2270,7 @@ for elf in elves:
 
 
 
-cum = sum(sorted(spus, reverse=True)[:3])
-print(max(spus), cum)
+abc = sum(sorted(spus, reverse=True)[:3])
+print(max(spus), abc)
 
 

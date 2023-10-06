@@ -299,9 +299,9 @@ tGNgtsNQHsJmwwzddmQw
 hMhhDBwMhDDfCRRBjFDDTTWjdWmrmdWqjlmmmjJz
 RSpSSBhppDhRncRLswZLGvtGvNcNtL"""
 
-list = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+list_letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-letter_list = [x for x in list]
+letter_list = [x for x in list_letters]
 
 print(letter_list)
 Words = String.split()
@@ -321,3 +321,27 @@ for word in Words:
     count += letter_list.index(Main_symbol) + 1
 
 print(count)
+
+
+
+pair_word = list(zip(*[iter(Words)]*3))
+
+counter = 0
+print(pair_word)
+Mega_list = []
+for word in pair_word:
+    Mega_list = list(word)
+    for x in Mega_list:
+        Mega_list.append(x)
+        Mega_list = ''.join(Mega_list)
+        break
+
+
+    def most_frequent(listt):
+        return max(set(listt), key=listt.count)
+
+
+    items = most_frequent(Mega_list)
+    counter += letter_list.index(items) + 1
+
+print(counter)

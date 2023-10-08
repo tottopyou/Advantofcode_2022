@@ -1,3 +1,5 @@
+import collections
+
 String = """LLBPGtltrGPBMMsLcLMMVMpVRhhfCDTwRwRdTfwDllRRRDhC
 gNFJHJFgtZFJjZJHNNFWZWZwwDjCwSDhfCDbdwjfwDTTDT
 gmQNZnZNHWnqmQpLtVLMBsPpBqrL
@@ -308,7 +310,7 @@ Words = String.split()
 
 count = 0
 
-for word in Words:
+for word  in Words:
     half = len(word)//2
     word_1, word_2 = word[:half], word[half:]
     Sword_1 = set(word_1)
@@ -326,22 +328,17 @@ print(count)
 
 pair_word = list(zip(*[iter(Words)]*3))
 
+answer = []
 counter = 0
 print(pair_word)
 Mega_list = []
 for word in pair_word:
     Mega_list = list(word)
-    for x in Mega_list:
-        Mega_list.append(x)
-        Mega_list = ''.join(Mega_list)
-        break
-
-
-    def most_frequent(listt):
-        return max(set(listt), key=listt.count)
-
-
-    items = most_frequent(Mega_list)
-    counter += letter_list.index(items) + 1
-
+    S_word1 = set(word[0])
+    S_word2 = set(word[1])
+    S_word3 = set(word[2])
+    first_check = S_word1.intersection(S_word2)
+    second_check = first_check.intersection(S_word3)
+    answer = ','.join(second_check)
+    counter += letter_list.index(answer) + 1
 print(counter)

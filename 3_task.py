@@ -315,7 +315,7 @@ for word  in Words:
     word_1, word_2 = word[:half], word[half:]
     Sword_1 = set(word_1)
     Sword_2 = set(word_2)
-    symbol = Sword_1.intersection(Sword_2)
+    symbol = Sword_1 & Sword_2
     Main_symbol = ','.join(symbol)
     print(word_1, word_2)
     print(Sword_1, Sword_2)

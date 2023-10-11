@@ -527,9 +527,13 @@ for x in numbers:
         step = list(step)
         from_ = int(step[1]) - 1
         to = int(step[2]) - 1
+        lenth = int(step[0]) * -1
+        slays = stak[from_][lenth:]
+        #print(slays)
+        for x in slays:
+            stak[to].append(x)
         while i != int(step[0]):
             symbol = stak[from_].pop(-1)
-            stak[to].append(symbol)
             i += 1
 
 result =[]
